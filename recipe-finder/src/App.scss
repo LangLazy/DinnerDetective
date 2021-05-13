@@ -1,0 +1,172 @@
+
+/*For Search Bar*/
+.App {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+ 
+  .seperator{
+	padding-bottom: 250px;
+  }
+  .Space{
+	padding-bottom: 5%;
+  }
+  
+  * {
+	font-family: "Source Sans Pro", sans-serif;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
+	outline: none;
+  }
+.headerMain {
+  font-family: "Georgia";
+  font-size: 50px;
+  top: 5%;
+  left: 35%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Space {
+	margin-bottom: 1%;	
+  }
+
+body {
+	background: #e0ffff;
+}
+body, html {
+	* {	
+			box-sizing:border-box;
+	}
+}
+
+.container {
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	transform: translate(-50%);
+}
+
+.search-box {	
+	input[type="text"] {
+		border: none;
+		background: none;
+		z-index: 1;
+		width: 25px;
+		height: 25px;
+		transition: all .25s ease-in .25s;
+		color: transparent;
+		font-size: .75rem;
+		line-height:25px;
+		&:hover {
+			cursor: pointer;
+			&:focus {
+				cursor: text;
+			}
+			+ span {
+				background: rgba(255,255,255,0.2);
+			}
+		}
+		&:focus {
+			width: 400px;
+			padding: 0 10px;
+			outline: none;
+			color: black;
+			background:none;
+			color: rgb(0, 0, 0); //changes cursor colour
+			+ span {
+				width: 400px;
+				&::before {
+					width:2px;
+					opacity: 0;
+					transition: all .25s ease-in;
+				}
+			}
+		}
+		+ span {
+			z-index: -1;
+			position: absolute;
+			border: 2px solid rgb(0, 0, 0);
+			top: 0;
+			width: 25px; //changes the circle part
+			height: 25px;
+			transition: all .25s ease-in .25s;
+			border-radius: 25px;
+			left: 0;
+			&::before {
+				transition: all .25s ease-in .5s;
+				transform-origin: left top;
+				content: '';
+				position: absolute;
+				width: 10px;
+				height: 5px; //width
+				border-radius: 5px;
+				background: rgb(0, 0, 0);
+				transform: rotate(45deg) translate(26px, -2px);
+			}
+		}
+	}
+}
+
+
+
+// Recipes 
+.recipes {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+  }
+  //
+  .recipe {
+	width: 25rem; //change box size 
+	margin: 3rem;
+	display: flex;
+	flex-direction: column;
+	background-color: #FFFFDB;
+	padding: 2rem;
+	position: relative;
+	border-radius: 0.5rem;
+	//box-shadow: 2rem 3rem 5rem #aaa;
+  }
+  
+  .recipe h2 {
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 0.5rem;
+	padding: 0.3rem 0.5rem;
+	position: absolute;
+	top: 2.5rem;
+	left: 2.5rem;
+	right: 2.5rem;
+	font-size: 1rem; //Change text size
+	font-weight: 400;
+	text-shadow: 0 0.5rem 0.5rem #555;
+	color: #fff;
+  }
+  
+  .recipe img {
+	border-radius: 0.5rem;
+	object-fit: cover;
+  }
+  
+  .recipe a {
+	font-size: 1.8rem;
+	color: #FFDBFF;
+  }
+  
+  .recipe button {
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #FFB0A8;
+	border: none;
+	border-radius: 0.5rem;
+	height: 3rem;
+  }
+  
