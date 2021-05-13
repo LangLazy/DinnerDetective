@@ -1,5 +1,5 @@
 
-/*For Search Bar*/
+/*Code fro Search Bar adapted from: https://codepen.io/jarnovanrhijn/pen/obPLOY*/
 .App {
 	display: flex;
 	flex-direction: column;
@@ -114,7 +114,7 @@ body, html {
 
 
 
-// Recipes 
+// Recipe cards, code adapted from https://github.com/lashaNoz/food-searching-app/blob/master/src/App.css
 .recipes {
 	width: 90%;
 	display: flex;

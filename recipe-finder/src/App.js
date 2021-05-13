@@ -1,44 +1,51 @@
+//Import Needed utils
 import React,{useState}  from 'react'
 import Axios from 'axios'
-import './App.scss';
 import {v4} from 'uuid'
+
+import './App.scss';
+//Import in components
 import Entity from "./components/entity"
 
 function App() {
   const [input, updateInput] = useState("");
   const [recipes, updateRecipes] = useState([]);
- 
-
-  const apiKey = "b6248cff160b480e9d1393eaf0292b8f";
-
+  
+  const apiKey = "xxx";
+  
+  //Parse user input into format allowed by API
   const formatIng = (ings) =>{
     const newForm = ings.replace(", ", ",+")
     return newForm
   }
+
+  //Fetches a specific Recipes link by its API ID
   const genUrl = (ing)=>{
     const newForm = formatIng(ing)
     const nURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${newForm}&number=100&ranking=1`;
     return nURL;
   }
 
+  //Queries Server for Recipes
   const getVals = async()=>{
     const data = await Axios.get(genUrl(input))
     updateRecipes(data.data)    
     
   }
-
+  //Handles on Submit of the form
   const submitForm =  (e) =>{
     e.preventDefault();    
     getVals();
     updateInput("")
     
   }
+  //Handles typing in the text box
   const updateQuery = (e) =>{
   updateInput(e.target.value)
   
-    }
-  
+    }  
 
+    //The actual App
   return (
     <div className="App">
       <div className="seperator">
